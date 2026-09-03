@@ -1,75 +1,61 @@
 <!doctype html>
 <html>
-    <head>
-        <title>My First Page</title>
-        <link rel="stylesheet" href="global.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap"
-            rel="stylesheet"
-        />
-        <script src="script.js"></script>
-        <script src="games.js"></script>
-        <header>
-            <div id="logo">OUR LOGO HERE</div>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="/"><button class="button">Homepage</button></a>
-                    </li>
-                    <li>
-                        <a href="/index2"
-                            ><button class="button">Page 2!</button></a
-                        >
-                    </li>
-                    <li>
-                        <button class="button" id="theme-toggle">
-                            Theme Selector!
-                        </button>
-                    </li>
-                    <li>
-                        <a href="/valorant_lore_page.html"
-                            ><button class="button">Val Lore!</button></a
-                        >
-                    </li>
-                    <li>
-                        <button class="button" id="count-btn">Counter!</button>
-                        <span id="count-display">0</span>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-    </head>
-    <body>
-        <div class="wrapping-div">
-            <h1>Hi, I'm Joaquin</h1>
-            <p>the last 3 games I played were</p>
-
-            <form action="javascript:void(0)">
-                <label for="search">Search Games!</label>
-                <input
-                    type="text"
-                    id="search"
-                    placeholder="Search for games.."
-                />
-                <label for="genre">Choose a game Genre!</label>
-                <select name="genre" , id="genre-dropdown">
-                    <option value="all">Show all Games!</option>
-                </select>
-
-                <div>
-                    <ol>
-                        <button class="button" id="game-loader">
-                            Load Games!
-                        </button>
-                    </ol>
-                </div>
-            </form>
-            <img src="Dog_Breeds.jpg" alt="Beautiful puppy" />
-            <ol id="list"></ol>
-
+  <head>
+    <title>My First Page</title>
+    <link rel="stylesheet" href="global.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js"></script>
+    <script src="games.js"></script>
+    <header>
+      <div id="logo">OUR LOGO HERE</div>
+      <nav>
+        <ul>
+          <li>
+            <a href="/"><button class="button">Homepage</button></a>
+          </li>
+          <li>
             <a href="/index2"><button class="button">Page 2!</button></a>
+          </li>
+          <li>
+            <button class="button" id="theme-toggle">Theme Selector!</button>
+          </li>
+          <li>
+            <a href="/valorant_lore_page.html"
+              ><button class="button">Val Lore!</button></a
+            >
+          </li>
+          <li>
+            <button class="button" id="count-btn">Counter!</button>
+            <span id="count-display">0</span>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </head>
+  <body>
+    <div class="wrapping-div">
+      <h1>Hi, I'm Joaquin</h1>
+      <p>the last 3 games I played were</p>
+      <img src="Dog_Breeds.jpg" alt="Beautiful puppy" />
+      <form class="form" action="javascript:void(0)">
+        <label for="search">Search Games!</label>
+        <input type="text" id="search" placeholder="Search for games.." />
+        <label for="genre">Choose a game Genre!</label>
+        <select name="genre" , id="genre-dropdown">
+          <option value="all">Show all Games!</option>
+        </select>
+
+        <div>
+          <button class="button" id="game-loader">Load Games!</button>
+          <div id="list"></div>
         </div>
-    </body>
+      </form>
+      <a href="/index2"><button class="button">Page 2!</button></a>
+    </div>
+  </body>
 </html>

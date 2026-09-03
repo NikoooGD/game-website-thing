@@ -1,4 +1,3 @@
-
 // Placeholder data — swap image URLs, descriptions, and prices as needed.
 // Images use picsum.photos with a per-game seed, so each URL returns a stable
 // (non-changing) working image. price is in USD; 0 means free-to-play.
