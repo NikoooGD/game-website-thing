@@ -1,0 +1,289 @@
+<link rel="stylesheet" href="global.css" />
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Barlow:ital,wght@0,300;0,400;1,300&display=swap");
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .valo-page {
+        font-family: "Barlow", sans-serif;
+        font-weight: 300;
+        color: var(--color-text-primary);
+        padding: 0;
+        max-width: 680px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero {
+        position: relative;
+        padding: 3rem 2.5rem 2rem;
+        border-bottom: 1px solid var(--color-border-tertiary);
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        background: rgba(255, 70, 85, 0.06);
+        pointer-events: none;
+    }
+
+    .hero::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 60px;
+        width: 200px;
+        height: 1px;
+        background: linear-gradient(90deg, #ff4655, transparent);
+    }
+
+    .protocol-label {
+        font-family: "Rajdhani", sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.25em;
+        color: #ff4655;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .protocol-label::before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 1px;
+        background: #ff4655;
+    }
+
+    .hero-title {
+        font-family: "Rajdhani", sans-serif;
+        font-size: 52px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        line-height: 1;
+        color: var(--color-text-primary);
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
+
+    .hero-title span {
+        color: #ff4655;
+    }
+
+    .hero-sub {
+        font-size: 14px;
+        font-weight: 300;
+        color: var(--color-text-secondary);
+        letter-spacing: 0.05em;
+        font-style: italic;
+        max-width: 420px;
+    }
+
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+    }
+
+    .para-block {
+        padding: 2rem 2.5rem;
+        border-bottom: 0.5px solid var(--color-border-tertiary);
+        position: relative;
+    }
+
+    .para-block:nth-child(odd) {
+        border-right: 0.5px solid var(--color-border-tertiary);
+    }
+
+    .para-block:nth-child(3),
+    .para-block:nth-child(4) {
+        border-bottom: none;
+    }
+
+    .para-num {
+        font-family: "Rajdhani", sans-serif;
+        font-size: 72px;
+        font-weight: 700;
+        color: rgba(255, 70, 85, 0.07);
+        position: absolute;
+        top: 12px;
+        right: 20px;
+        line-height: 1;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .para-heading {
+        font-family: "Rajdhani", sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #ff4655;
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .para-heading::after {
+        content: "";
+        flex: 1;
+        height: 0.5px;
+        background: var(--color-border-tertiary);
+    }
+
+    .para-text {
+        font-size: 14px;
+        line-height: 1.75;
+        color: var(--color-text-primary);
+        font-weight: 300;
+    }
+
+    .para-text strong {
+        font-weight: 600;
+        color: var(--color-text-primary);
+    }
+
+    .footer-bar {
+        padding: 1rem 2.5rem;
+        border-top: 0.5px solid var(--color-border-tertiary);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .footer-note {
+        font-family: "Rajdhani", sans-serif;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--color-text-tertiary);
+    }
+
+    .redline {
+        display: flex;
+        gap: 3px;
+        align-items: center;
+    }
+
+    .redline span {
+        display: block;
+        height: 2px;
+        background: #ff4655;
+    }
+
+    .redline span:nth-child(1) {
+        width: 20px;
+    }
+    .redline span:nth-child(2) {
+        width: 8px;
+        opacity: 0.5;
+    }
+    .redline span:nth-child(3) {
+        width: 4px;
+        opacity: 0.25;
+    }
+</style>
+
+<div class="valo-page">
+    <div class="hero">
+        <div class="protocol-label">Classified Dossier</div>
+        <h1 class="hero-title">VALOR<span>ANT</span></h1>
+        <p class="hero-sub">
+            The lore behind the Protocol — a world fractured by radianite,
+            supernatural powers, and an endless war for Earth's future.
+        </p>
+    </div>
+
+    <div class="content-grid">
+        <div class="para-block">
+            <div class="para-num">01</div>
+            <div class="para-heading">The First Light</div>
+            <p class="para-text">
+                The Valorant universe was irrevocably changed by an event known
+                as <strong>First Light</strong> — a global catastrophe of
+                unknown origin that bathed the Earth in mysterious energy. This
+                cataclysm unlocked latent abilities in a small fraction of
+                humanity, transforming ordinary people into powerful beings
+                called <strong>Radiants</strong>. Simultaneously, it scattered a
+                rare mineral called <strong>radianite</strong> across the world
+                — a substance of near-limitless energy potential that would
+                become both humanity's salvation and its greatest source of
+                conflict.
+            </p>
+        </div>
+
+        <div class="para-block">
+            <div class="para-num">02</div>
+            <div class="para-heading">Radianite &amp; Kingdom</div>
+            <p class="para-text">
+                In the aftermath of First Light, the mega-corporation
+                <strong>Kingdom Corporation</strong> rose to dominance by
+                monopolizing radianite extraction and distribution. While
+                Kingdom powered cities and funded technological revolutions, its
+                ruthless practices — environmental devastation, exploitation of
+                Radiants, and concealment of dangerous research — bred deep
+                resentment across the globe. Radianite became the lifeblood of
+                civilization, but also a weapon: unstable, volatile, and coveted
+                by every faction with ambitions of power.
+            </p>
+        </div>
+
+        <div class="para-block">
+            <div class="para-num">03</div>
+            <div class="para-heading">The Protocol</div>
+            <p class="para-text">
+                To combat the growing threats posed by radianite misuse and
+                rogue Radiant activity, a clandestine international organization
+                known as <strong>VALORANT Protocol</strong> was founded. The
+                Protocol recruits elite agents from every corner of the globe —
+                both Radiant-gifted and technologically augmented humans —
+                binding them under a single mission: protect the world from
+                catastrophic radianite events. The agents, known by codenames,
+                each carry their own backstories, loyalties, and personal stakes
+                in a world that has never fully recovered from First Light.
+            </p>
+        </div>
+
+        <div class="para-block">
+            <div class="para-num">04</div>
+            <div class="para-heading">Mirrored Earth</div>
+            <p class="para-text">
+                The deepest layer of Valorant's lore involves the discovery of a
+                <strong>Mirror Earth</strong> — a parallel version of the world
+                where First Light unfolded differently. The shadowy antagonist
+                group <strong>Omega Earth</strong> seeks to drain the prime
+                Earth of its radianite to save their own dying world. This
+                interdimensional conflict places the Protocol at the center of
+                an existential war — not just against human greed or rogue
+                powers, but against an alternate civilization fighting
+                desperately for survival at the expense of their own.
+            </p>
+        </div>
+    </div>
+
+    <div class="footer-bar">
+        <div class="footer-note">VALORANT Protocol // Eyes Only</div>
+        <div class="redline"><span></span><span></span><span></span></div>
+    </div>
+</div>
+<script src="script.js"></script>
+<div class="wrapping-div">
+    <li>
+        <a href="/"><button class="button">Homepage</button></a>
+    </li>
+</div>
