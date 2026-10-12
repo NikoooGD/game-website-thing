@@ -48,6 +48,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const searchBox = document.querySelector("#search");
 
+  // Load favorites from localStorage
+  let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+  function saveFavorites() {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }
+
   function applyFilters() {
     let filteredGames = games;
     const query = searchBox.value.toLowerCase();
@@ -76,6 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const game_card = document.createElement("div");
       game_card.classList.add("game_card");
 
+      const isFavorite = favorites.includes(game.id);
+
       game_card.innerHTML = `
       <img src="${game.image}">
       <div class="card_content">
@@ -85,6 +94,9 @@ document.addEventListener("DOMContentLoaded", () => {
           <span>${game.genre}</span>
           <span>${game.price == 0 ? "Free" : `$${game.price.toFixed(2)}`}</span>
         </div>
+        <button type="button" class="favorite-btn ${isFavorite ? "is-favorite" : ""}" data-id="${game.id}">
+          ${isFavorite ? "★" : "☆"}
+        </button>
       </div>`;
       list.appendChild(game_card);
     });
@@ -103,4 +115,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   renderRandomDog();
+
+  // FAVORITES SECTION
+  function toggleFavorite(id) {
+    if (favorites.includes(id)) {
+      favorites = favorites.filter((favoriteId) => favoriteId !== id);
+    } else {
+      favorites.push(id);
+    }
+    saveFavorites();
+    applyFilters();
+  }
+
+  list.addEventListener("click", (event) => {
+    const star = event.target.closest(".favorite-btn");
+    if (!star) return;
+    toggleFavorite(Number(star.dataset.id));
+  });
 });
