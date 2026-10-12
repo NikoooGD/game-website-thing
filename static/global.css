@@ -110,3 +110,18 @@ nav ul li .button {
 .form #list img {
   max-width: 100%;
 }
+
+.favorite-btn {
+  background: none;
+  border: none;
+  color: #9aa0a6;
+  font-size: 26px;
+  line-height: 1;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.favorite-btn:hover,
+.favorite-btn.is-favorite {
+  color: #e8c547;
+}
