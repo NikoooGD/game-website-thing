@@ -91,8 +91,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const isFavorite = favorites.includes(game.id);
 
+      const imgSrc = game.image || `https://cdn.akamai.steamstatic.com/steam/apps/${game.appid}/header.jpg`;
+
+
       game_card.innerHTML = `
-      <img src="${game.image}">
+      <img src="${imgSrc}">
       <div class="card_content">
         <h2>${game.title}</h2>
         <p>${game.description}</p>
