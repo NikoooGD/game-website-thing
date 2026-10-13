@@ -19,6 +19,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const dropdown = document.querySelector("#genre-dropdown");
 
+  const storeDropdown = document.querySelector("#store-dropdown")
+
+  const maxPrice = document.querySelector("#max-price")
+
+  const maxPriceDisplay = document.querySelector("#max-price-display")
+
+
+  function renderStoreOptions(gamesList) {
+    const uniqueStores = new Array();
+
+    gamesList.forEach((game) => {
+      if (!uniqueStores.includes(game.store)) {
+        uniqueStores.push(game.store);
+      }
+    });
+
+    uniqueStores.sort();
+
+    uniqueStores.forEach((store) => {
+      const option = document.createElement("option");
+      option.value = store;
+      option.textContent = store;
+      storeDropdown.appendChild(option);
+    });
+  }
+
+  renderStoreOptions(games);
+
   function renderGenreOptions(gamesList) {
     const uniqueGenres = new Array();
 
@@ -62,6 +90,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (dropdown.value !== "all") {
       filteredGames = filteredGames.filter(
         (game) => game.genre === dropdown.value,
+      );
+    }
+
+    if (storeDropdown.value !== "all") {
+      filteredGames = filteredGames.filter(
+        (game) => game.store === storeDropdown.value,
       );
     }
 
