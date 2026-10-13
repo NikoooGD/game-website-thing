@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderRandomDog();
 
-  // FAVORITES SECTION
+
   function toggleFavorite(id) {
     if (favorites.includes(id)) {
       favorites = favorites.filter((favoriteId) => favoriteId !== id);
