@@ -71,11 +71,17 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     }
 
+    // Filter by favorites if checkbox is checked
+    if (document.querySelector("#favorites-only").checked) {
+      filteredGames = filteredGames.filter((game) => favorites.includes(game.id));
+    }
+
     renderGames(filteredGames);
   }
 
   searchBox.addEventListener("input", applyFilters);
   dropdown.addEventListener("change", applyFilters);
+  document.querySelector("#favorites-only").addEventListener("change", applyFilters);
 
   function renderGames(gamesToShow) {
     list.innerHTML = "";
