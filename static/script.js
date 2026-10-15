@@ -76,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const searchBox = document.querySelector("#search");
 
-  // Load favorites from localStorage
   let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
 
   function saveFavorites() {
@@ -105,7 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     }
 
-    // Filter by favorites if checkbox is checked
     if (document.querySelector("#favorites-only").checked) {
       filteredGames = filteredGames.filter((game) => favorites.includes(game.id));
     }
@@ -115,6 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   searchBox.addEventListener("input", applyFilters);
   dropdown.addEventListener("change", applyFilters);
+  storeDropdown.addEventListener("change", applyFilters)
   document.querySelector("#favorites-only").addEventListener("change", applyFilters);
 
   function renderGames(gamesToShow) {
@@ -159,7 +158,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderRandomDog();
 
-
   function toggleFavorite(id) {
     if (favorites.includes(id)) {
       favorites = favorites.filter((favoriteId) => favoriteId !== id);
@@ -176,3 +174,4 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleFavorite(Number(star.dataset.id));
   });
 });
+console.log("There should not be errors here other than the dog img src")
