@@ -70,6 +70,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const list = document.querySelector("#list");
 
+  maxPrice.addEventListener("input", function () {
+    maxPriceDisplay.textContent =
+      maxPrice.value == 0 ? "Free" : `$${maxPrice.value}`;
+    applyFilters()
+  });
+
   loadBtn.addEventListener("click", function () {
     applyFilters();
   });
@@ -106,7 +112,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (document.querySelector("#favorites-only").checked) {
       filteredGames = filteredGames.filter((game) => favorites.includes(game.id));
+
     }
+
+    filteredGames = filteredGames.filter(
+      (game) => game.price <= Number(maxPrice.value),
+    );
 
     renderGames(filteredGames);
   }
