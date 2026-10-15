@@ -25,6 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const maxPriceDisplay = document.querySelector("#max-price-display")
 
+  const randomGame = document.querySelector(("#random-game"))
+  let filteredGames = games;
+  randomGame.addEventListener(("click"), () => {
+    let randomElement = filteredGames[Math.floor(Math.random() * filteredGames.length)];
+    renderGames([randomElement])
+  });
+
 
   function renderStoreOptions(gamesList) {
     const uniqueStores = new Array();
@@ -89,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function applyFilters() {
-    let filteredGames = games;
+    filteredGames = games;
     const query = searchBox.value.toLowerCase();
 
     if (dropdown.value !== "all") {
